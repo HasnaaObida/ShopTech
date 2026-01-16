@@ -14,7 +14,7 @@ export default function SalesTable() {
             <th className="p-2">Produit</th>
             <th className="p-2">Catégorie</th>
             <th className="p-2">Quantité</th>
-            <th className="p-2">Prix</th> 
+            <th className="p-2">Prix</th>
             <th className="p-2">Date</th>
           </tr>
         </thead>
