@@ -1,30 +1,19 @@
-import axios from 'axios';
+const API_URL = 'http://localhost:4000'
 
-const api = axios.create({
-  baseURL: 'http://localhost:3000', // or your JSON server / backend URL
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+export async function fetchProducts() {
+  const res = await fetch(`${API_URL}/products`)
+  return res.json()
+}
 
-export const getProducts = async () => {
-  const response = await api.get('/products');
-  return response.data;
-};
+export async function addProduct(product: any) {
+  const res = await fetch(`${API_URL}/products`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product)
+  })
+  return res.json()
+}
 
-export const addProduct = async (product: any) => {
-  const response = await api.post('/products', product);
-  return response.data;
-};
-
-export const updateProduct = async (product: any) => {
-  const response = await api.put(`/products/${product.id}`, product);
-  return response.data;
-};
-
-export const deleteProduct = async (id: number) => {
-  const response = await api.delete(`/products/${id}`);
-  return response.data;
-};
-
-export default api;
+export async function deleteProduct(id: number) {
+  await fetch(`${API_URL}/products/${id}`, { method: 'DELETE' })
+}

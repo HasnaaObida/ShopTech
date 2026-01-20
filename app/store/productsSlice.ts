@@ -1,33 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { Product } from '../types/product'
 
-export interface Product {
-  id: string
-  name: string
-  category: string
-  quantity: number
-  price: number
-}
-
-interface ProductsState {
-  items: Product[]
-}
-
-const initialState: ProductsState = {
-  items: [],
-}
+const initialState: Product[] = []
 
 const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
+    setProducts: (_, action: PayloadAction<Product[]>) => action.payload,
     addProduct: (state, action: PayloadAction<Product>) => {
-      state.items.push(action.payload)
+      state.push(action.payload)
     },
-    removeProduct: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter(p => p.id !== action.payload)
+    deleteProduct: (state, action: PayloadAction<number>) => {
+      return state.filter(p => p.id !== action.payload)
     },
-  },
+    updateProduct: (state, action: PayloadAction<Product>) => {
+      const index = state.findIndex(p => p.id === action.payload.id)
+      if (index >= 0) state[index] = action.payload
+    }
+  }
 })
 
-export const { addProduct, removeProduct } = productsSlice.actions
+export const { setProducts, addProduct, deleteProduct, updateProduct } = productsSlice.actions
 export default productsSlice.reducer

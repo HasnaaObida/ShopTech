@@ -1,0 +1,47 @@
+'use client'
+
+import { BarChart3, TrendingUp, AlertTriangle, Sparkles } from 'lucide-react'
+import data from '../../../db.json'
+
+export default function AiInsight() {
+  // Sécurisation des données
+  const ai = data?.ai ?? {}
+
+  return (
+    <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-4">
+        <div className="p-2 bg-orange-100 text-orange-500 rounded-lg">
+          <Sparkles size={18} />
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold">Analyse IA</h3>
+          <p className="text-sm text-gray-500">
+            Insights générés automatiquement
+          </p>
+        </div>
+      </div>
+
+      {/* Liste des insights */}
+      <ul className="space-y-3 text-sm text-gray-700">
+        <li className="flex gap-2">
+          <BarChart3 className="text-blue-500 mt-0.5" size={18} />
+          {ai.electronics ??
+            'La catégorie Électronique domine les ventes ce mois-ci.'}
+        </li>
+
+        <li className="flex gap-2">
+          <TrendingUp className="text-green-500 mt-0.5" size={18} />
+          {ai.sales ??
+            'Les ventes sont en hausse par rapport au mois précédent.'}
+        </li>
+
+        <li className="flex gap-2">
+          <AlertTriangle className="text-yellow-500 mt-0.5" size={18} />
+          {ai.alert ??
+            'Attention : certains produits ont un stock faible.'}
+        </li>
+      </ul>
+    </div>
+  )
+}

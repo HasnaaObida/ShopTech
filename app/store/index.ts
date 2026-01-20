@@ -5,8 +5,8 @@ import salesReducer from './salesSlice'
 export const store = configureStore({
   reducer: {
     products: productsReducer,
-    sales: salesReducer,
-  },
+    sales: salesReducer
+  }
 })
 
 export type RootState = ReturnType<typeof store.getState>

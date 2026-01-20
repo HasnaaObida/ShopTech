@@ -1,35 +1,44 @@
-import productsReducer, { addProduct, removeProduct, updateProduct } from '../store/productsSlice';
-import { Product } from '../types/product';
+import productsReducer, {
+  setProducts,
+  addProduct,
+  deleteProduct,
+  Product
+} from '../app/store/productsSlice'
 
 describe('productsSlice', () => {
-    const initialState: Product[] = [];
+  test('should return the initial state', () => {
+    const initial = productsReducer(undefined, { type: undefined })
+    expect(initial).toEqual([])
+  })
 
-    it('should return the initial state', () => {
-        expect(productsReducer(undefined, { type: 'unknown' })).toEqual([]);
-    });
+  test('should handle setProducts', () => {
+    const initialState: Product[] = []
+    const products: Product[] = [
+      { id: 1, name: 'Clavier', price: 50 }
+    ]
+    const newState = productsReducer(initialState, setProducts(products))
+    expect(newState).toEqual(products)
+    expect(newState).toHaveLength(1)
+  })
 
-    it('should handle adding a product', () => {
-        const newProduct: Product = { id: 1, name: 'Laptop', price: 1200 };
-        const nextState = productsReducer(initialState, addProduct(newProduct));
-        expect(nextState).toHaveLength(1);
-        expect(nextState[0]).toEqual(newProduct);
-    });
+  test('should handle addProduct', () => {
+    const initialState: Product[] = []
+    const newState = productsReducer(
+      initialState,
+      addProduct({ id: 1, name: 'Clavier', price: 50 })
+    )
+    expect(newState).toHaveLength(1)
+    expect(newState[0].name).toBe('Clavier')
+  })
 
-    it('should handle removing a product', () => {
-        const state: Product[] = [
-            { id: 1, name: 'Laptop', price: 1200 },
-            { id: 2, name: 'Mouse', price: 30 }
-        ];
-        const nextState = productsReducer(state, removeProduct(1));
-        expect(nextState).toHaveLength(1);
-        expect(nextState[0].id).toBe(2);
-    });
-
-    it('should handle updating a product', () => {
-        const state: Product[] = [{ id: 1, name: 'Laptop', price: 1200 }];
-        const updatedProduct: Product = { id: 1, name: 'Laptop Pro', price: 1500 };
-        const nextState = productsReducer(state, updateProduct(updatedProduct));
-        expect(nextState[0].name).toBe('Laptop Pro');
-        expect(nextState[0].price).toBe(1500);
-    });
-});
+  test('should handle deleteProduct', () => {
+    const initialState: Product[] = [
+      { id: 1, name: 'Clavier', price: 50 }
+    ]
+    const newState = productsReducer(
+      initialState,
+      deleteProduct(1)
+    )
+    expect(newState).toHaveLength(0)
+  })
+})

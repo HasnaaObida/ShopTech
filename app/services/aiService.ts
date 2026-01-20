@@ -1,18 +1,17 @@
-import axios from 'axios';
+import OpenAI from 'openai'
 
-const AI_API_URL = 'https://api.openai.com/v1/your-endpoint';
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 
-export const generateProductDescription = async (productName: string) => {
-  const response = await axios.post(
-    AI_API_URL,
-    { prompt: `Write a product description for ${productName}`, max_tokens: 100 },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-    }
-  );
+export const generateSalesAnalysis = async (sales: any[]) => {
+  const prompt = `
+    Analyse ces ventes : ${JSON.stringify(sales)} 
+    et résume les performances et recommandations en français.
+  `
+  const completion = await openai.chat.completions.create({
+    model: 'gpt-4',
+    messages: [{ role: 'user', content: prompt }],
+    temperature: 0.7
+  })
 
-  return response.data.choices[0].text;
-};
+  return completion.choices[0].message?.content
+}

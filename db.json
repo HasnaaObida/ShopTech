@@ -1,0 +1,233 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Clavier mécanique RGB",
+      "price": 79,
+      "quantity": 25,
+      "category": "Informatique",
+      "description": "Clavier mécanique avec rétroéclairage RGB"
+    },
+    {
+      "id": 2,
+      "name": "Souris sans fil",
+      "price": 29,
+      "quantity": 40,
+      "category": "Informatique",
+      "description": "Souris ergonomique sans fil"
+    },
+    {
+      "id": 3,
+      "name": "Écran 24 pouces",
+      "price": 149,
+      "quantity": 15,
+      "category": "Informatique",
+      "description": "Écran Full HD 24 pouces"
+    },
+    {
+      "id": 4,
+      "name": "T-shirt coton",
+      "price": 19,
+      "quantity": 60,
+      "category": "Vêtements",
+      "description": "T-shirt unisexe en coton"
+    },
+    {
+      "id": 5,
+      "name": "Jeans slim",
+      "price": 49,
+      "quantity": 35,
+      "category": "Vêtements",
+      "description": "Jeans slim pour homme et femme"
+    },
+    {
+      "id": 6,
+      "name": "Chaussures de sport",
+      "price": 89,
+      "quantity": 50,
+      "category": "Vêtements",
+      "description": "Chaussures confortables pour la course"
+    },
+    {
+      "id": 7,
+      "name": "Mixeur plongeant",
+      "price": 39,
+      "quantity": 20,
+      "category": "Cuisine",
+      "description": "Mixeur plongeant 3 vitesses"
+    },
+    {
+      "id": 8,
+      "name": "Robot pâtissier",
+      "price": 199,
+      "quantity": 10,
+      "category": "Cuisine",
+      "description": "Robot pâtissier multifonctions 1000W"
+    },
+    {
+      "id": 9,
+      "name": "Poêle antiadhésive",
+      "price": 25,
+      "quantity": 45,
+      "category": "Cuisine",
+      "description": "Poêle de 24cm antiadhésive"
+    },
+    {
+      "id": 10,
+      "name": "Cafetière filtre",
+      "price": 59,
+      "quantity": 30,
+      "category": "Cuisine",
+      "description": "Cafetière filtre programmable 12 tasses"
+    },
+    {
+      "id": 11,
+      "name": "Table de bureau",
+      "price": 129,
+      "quantity": 12,
+      "category": "Mobilier",
+      "description": "Table en bois avec rangement"
+    },
+    {
+      "id": 12,
+      "name": "Chaise ergonomique",
+      "price": 99,
+      "quantity": 18,
+      "category": "Mobilier",
+      "description": "Chaise de bureau confortable"
+    },
+    {
+      "id": 13,
+      "name": "Bibliothèque",
+      "price": 149,
+      "quantity": 8,
+      "category": "Mobilier",
+      "description": "Bibliothèque en bois massif 5 étagères"
+    },
+    {
+      "id": 14,
+      "name": "Casque audio Bluetooth",
+      "price": 69,
+      "quantity": 25,
+      "category": "Informatique",
+      "description": "Casque sans fil avec réduction de bruit"
+    },
+    {
+      "id": 15,
+      "name": "Clé USB 64GB",
+      "price": 15,
+      "quantity": 60,
+      "category": "Informatique",
+      "description": "Clé USB rapide 64GB"
+    },
+    {
+      "id": 16,
+      "name": "Sac à dos",
+      "price": 49,
+      "quantity": 30,
+      "category": "Vêtements",
+      "description": "Sac à dos résistant pour ordinateur portable"
+    },
+    {
+      "id": 17,
+      "name": "Pull laine",
+      "price": 59,
+      "quantity": 20,
+      "category": "Vêtements",
+      "description": "Pull chaud en laine mérinos"
+    },
+    {
+      "id": 18,
+      "name": "Friteuse électrique",
+      "price": 79,
+      "quantity": 15,
+      "category": "Cuisine",
+      "description": "Friteuse 3L avec thermostat"
+    },
+    {
+      "id": 19,
+      "name": "Planche à découper",
+      "price": 12,
+      "quantity": 50,
+      "category": "Cuisine",
+      "description": "Planche à découper en bois"
+    },
+    {
+      "id": 20,
+      "name": "Lampe de bureau LED",
+      "price": 35,
+      "quantity": 40,
+      "category": "Mobilier",
+      "description": "Lampe LED avec intensité réglable"
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "product": "Clavier mécanique RGB",
+      "category": "Informatique",
+      "quantity": 5,
+      "price": 79,
+      "date": "2026-01-15"
+    },
+    {
+      "id": 2,
+      "product": "T-shirt coton",
+      "category": "Vêtements",
+      "quantity": 3,
+      "price": 19,
+      "date": "2026-01-16"
+    },
+    {
+      "id": 3,
+      "product": "Robot pâtissier",
+      "category": "Cuisine",
+      "quantity": 1,
+      "price": 199,
+      "date": "2026-01-17"
+    }
+  ],
+  "stats": [
+    {
+      "label": "Stock total",
+      "value": 375,
+      "change": "+12% vs mois dernier"
+    },
+    {
+      "label": "Valeur du stock",
+      "value": "184 525 DH",
+      "change": "+8% vs mois dernier"
+    },
+    {
+      "label": "Produits vendus",
+      "value": 109,
+      "change": "+15% vs mois dernier"
+    },
+    {
+      "label": "Valeur des ventes",
+      "value": "47 291 DH",
+      "change": "+22% vs mois dernier"
+    }
+  ],
+  "chart": [
+    {
+      "category": "Informatique",
+      "total": 400
+    },
+    {
+      "category": "Vêtements",
+      "total": 150
+    },
+    {
+      "category": "Maison",
+      "total": 200
+    }
+  ],
+    "ai": {
+    "electronics": "La catégorie Électronique génère 69% du chiffre d'affaires (32 618 DH).",
+    "sales": "109 unités vendues ce mois pour un total de 47 291 DH.",
+    "alert": "1 produit avec stock faible (<20 unités). Pensez à réapprovisionner."
+  }
+
+
+}
