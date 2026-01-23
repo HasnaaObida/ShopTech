@@ -45,7 +45,7 @@ export default function Sidebar() {
 
       {/* Footer */}
       <div className="px-6 py-4 border-t text-xs text-gray-400 text-center">
-        © 2024 ShopTech Studio
+        © 2026 ShopTech Studio
       </div>
     </aside>
   )

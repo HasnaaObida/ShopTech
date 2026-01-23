@@ -1,19 +1,11 @@
-const API_URL = 'http://localhost:4000'
-
 export async function fetchProducts() {
-  const res = await fetch(`${API_URL}/products`)
-  return res.json()
-}
+  const res = await fetch("http://localhost:5000/products", {
+    cache: "no-store",
+  });
 
-export async function addProduct(product: any) {
-  const res = await fetch(`${API_URL}/products`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(product)
-  })
-  return res.json()
-}
+  if (!res.ok) {
+    throw new Error(`Failed to fetch products (${res.status})`);
+  }
 
-export async function deleteProduct(id: number) {
-  await fetch(`${API_URL}/products/${id}`, { method: 'DELETE' })
+  return res.json();
 }
